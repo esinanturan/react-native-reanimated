@@ -4,13 +4,15 @@ env:
 on:
   pull_request:
     paths:
-      - .github/workflows/build-next-example.yml
+      - .github/workflows/example-next-build-check-and-test.yml
       - 'packages/react-native-reanimated/src/**'
       - 'packages/react-native-reanimated/NextExample/**'
   push:
     branches:
       - main
-
+  workflow_call:
+  workflow_dispatch:
+    
 jobs:
   check:
     runs-on: ubuntu-latest
